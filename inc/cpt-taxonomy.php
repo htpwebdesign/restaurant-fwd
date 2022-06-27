@@ -37,7 +37,6 @@ $args = array(
     'show_in_admin_bar'  => true,
     'show_in_rest'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'menu' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
@@ -84,7 +83,6 @@ register_post_type( 'res-menu', $args );
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'careers' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
@@ -127,7 +125,6 @@ register_post_type( 'res-menu', $args );
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'location' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
@@ -191,7 +188,6 @@ function res_register_taxonomies() {
         'show_in_rest'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'career-location' ),
     );
     register_taxonomy( 'res-career-location', array( 'res-careers' ), $args );
 
