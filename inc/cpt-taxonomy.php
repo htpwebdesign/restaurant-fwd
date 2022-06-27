@@ -127,7 +127,7 @@ register_post_type( 'res-menu', $args );
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'loaction' ),
+        'rewrite'            => array( 'slug' => 'location' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
