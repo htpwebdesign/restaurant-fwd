@@ -37,7 +37,7 @@ $args = array(
     'show_in_admin_bar'  => true,
     'show_in_rest'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'res-menu' ),
+    'rewrite'            => array( 'slug' => 'menu' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
@@ -84,7 +84,7 @@ register_post_type( 'res-menu', $args );
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'res-careers' ),
+        'rewrite'            => array( 'slug' => 'careers' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
@@ -127,7 +127,7 @@ register_post_type( 'res-menu', $args );
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'res-loaction' ),
+        'rewrite'            => array( 'slug' => 'location' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
@@ -136,6 +136,64 @@ register_post_type( 'res-menu', $args );
         'supports'           => array( 'title' ),
     );
     register_post_type( 'res-location', $args );
+
+}
+
+function res_register_taxonomies() {
+    //Register food taxonomy 
+    $labels = array(
+        'name'              => _x( 'Food Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Food Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Food Categories' ),
+        'all_items'         => __( 'All Food Category' ),
+        'parent_item'       => __( 'Parent Food Category' ),
+        'parent_item_colon' => __( 'Parent Food Category:' ),
+        'edit_item'         => __( 'Edit Food Category' ),
+        'view_item'         => __( 'view Food Category' ),
+        'update_item'       => __( 'Update Food Category' ),
+        'add_new_item'      => __( 'Add New Food Category' ),
+        'new_item_name'     => __( 'New Food Category Name' ),
+        'menu_name'         => __( 'Food Category' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'food-categories' ),
+    );
+    register_taxonomy( 'res-food-category', array( 'res-menu' ), $args );
+
+    $labels = array(
+        'name'              => _x( 'Career Location Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Career Location Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Career Location Categories' ),
+        'all_items'         => __( 'All Career Location Category' ),
+        'parent_item'       => __( 'Parent Career Location Category' ),
+        'parent_item_colon' => __( 'Parent Career Location Category:' ),
+        'edit_item'         => __( 'Edit Career Location Category' ),
+        'view_item'         => __( 'view Career Location Category' ),
+        'update_item'       => __( 'Update Career Location Category' ),
+        'add_new_item'      => __( 'Add New Career Location Category' ),
+        'new_item_name'     => __( 'New Career Location Category Name' ),
+        'menu_name'         => __( 'Career Location Category' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'career-location' ),
+    );
+    register_taxonomy( 'res-career-location', array( 'res-careers' ), $args );
 
 }
 ?>
