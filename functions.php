@@ -182,3 +182,12 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 add_action( 'init', 'res_register_custom_post_types');
 
 add_action( 'init', 'res_register_taxonomies');
+
+
+// Create Options Page
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
