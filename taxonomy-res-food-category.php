@@ -95,19 +95,19 @@ if ( $terms && ! is_wp_error($terms) ) : ?>
 
 			?>
 			<?php 
-$term = get_queried_object();
-$images = get_field('gallery', $term);
-$size = 'full'; // (thumbnail, medium, large, full or custom size)
-if( $images ): ?>
-    <ul>
-        <?php foreach( $images as $image_id ): ?>
-            <li>
-                <?php echo wp_get_attachment_image( $image_id, $size ); ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-<?php  
+				$term = get_queried_object();
+				$images = get_field('gallery', $term);
+				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				if( $images ): ?>
+					<ul>
+						<?php foreach( $images as $image_id ): ?>
+							<li>
+								<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+				<?php  
 
 			the_posts_navigation();
 
