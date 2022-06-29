@@ -16,7 +16,28 @@
 			<?php
 				wp_nav_menu( array( 
 					'theme_location' => 'footer-menu', 
-					'container_class' => 'footer-menu' ) ); 
+					'container_class' => 'footer-menu' ) );
+			
+					if ( function_exists ( 'get_field' ) ) {
+						if ( get_field( 'restaurant_name', 'option' ) ) {
+							?>
+							<section class= "restaurant-info">
+							 <h3><?php the_field( 'restaurant_name', 'option' );?> </h3>
+							<?php
+						}
+						if ( get_field( 'restaurant_hours', 'option' ) ) {
+							?>
+							 <p><?php the_field( 'restaurant_hours', 'option' );?> </p>
+							<?php
+						}
+						if ( get_field( 'restaurant_phone_number', 'option' ) ) {
+							?>
+							 <p><?php the_field( 'restaurant_phone_number', 'option' );?> </p>
+							</section>
+							<?php
+						}
+					}
+			
 			?>			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
