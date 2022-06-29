@@ -87,13 +87,10 @@ get_header();
 				</ul>
 			<?php endif;
 
-				if ( get_field( 'cta_menu_link' ) ) {
-					?>
-					<section class= "cta-menu-link">
-					<p><?php the_field( 'cta_menu_link',  );?> </p>
-					</section> 
-					<?php
-				}
+			$link = get_field('cta_menu_link');
+			if( $link ): ?>
+				<a class="menu-link" href="<?php echo esc_url( $link ); ?>">Menu</a>
+			<?php endif;
 
 			the_posts_navigation();
 
