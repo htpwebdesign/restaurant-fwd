@@ -11,6 +11,7 @@
  *
  * @package Restaurant_FWD
  */
+// [instagram-feed feed=2]
 
 get_header();
 ?>
@@ -101,6 +102,8 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+
+		echo do_shortcode('[instagram-feed feed=2]');
 		?>
 
 	</main><!-- #main -->
