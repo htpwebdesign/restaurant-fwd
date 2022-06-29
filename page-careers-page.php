@@ -21,6 +21,13 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
+			$image = get_field('image_careers', 'option');
+			$size = 'full'; // (thumbnail, medium, large, full or custom size)
+			if( $image ) {
+				echo wp_get_attachment_image( $image, $size );
+			}
+
+
 			get_template_part( 'template-parts/careers', 'page' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
