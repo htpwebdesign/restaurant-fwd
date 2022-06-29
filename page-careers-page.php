@@ -26,6 +26,15 @@ get_header();
 			if( $image ) {
 				echo wp_get_attachment_image( $image, $size );
 			}
+			if ( function_exists ( 'get_field' ) ) {
+				if ( get_field( 'career_summary', 'option' ) ) {
+					?>
+					<section class= "career-summary">
+					 <p><?php the_field( 'career_summary', 'option' );?> </p>
+					</section> 
+					<?php
+				}
+			}			
 
 
 			get_template_part( 'template-parts/careers', 'page' );
