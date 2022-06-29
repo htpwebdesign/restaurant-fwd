@@ -74,6 +74,8 @@ get_header();
 
 			endwhile;
 
+			// Our Menu Continued outside of loop
+
 			$term = get_queried_object();
 			$images = get_field('cta_menu_gallery', $term);
 			$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
