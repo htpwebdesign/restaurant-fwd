@@ -32,6 +32,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
+<<<<<<< Updated upstream
 				$args = array(
 					'post_type'        => 'res-careers',
 					'posts_per_page'=>    -1,
@@ -63,6 +64,14 @@ get_header();
 														<?php
 													}
 												}
+=======
+				
+				$image = get_field('image_home', 'option');
+				$size = 'banner-image'; // (thumbnail, medium, large, full or custom size)
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size );
+				}
+>>>>>>> Stashed changes
 
 				/*
 				 * Include the Post-Type-specific template for the content.

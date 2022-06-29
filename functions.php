@@ -191,3 +191,7 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 	
 }
+
+// Banner Image Size
+
+add_image_size( 'banner-image', 1600, 500, true );
