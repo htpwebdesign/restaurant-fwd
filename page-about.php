@@ -27,6 +27,21 @@ get_header();
 				echo wp_get_attachment_image( $image, $size );
 			}
 
+			if( function_exists( 'get_field' ) ) {
+				if ( get_field( 'intro_paragraph') ) {
+					?>
+					<section class="intro-paragraph">
+						<p><?php the_field('intro_paragraph'); ?></p>
+					</section>
+					<?php
+					
+					$link = get_field('careers_cta');
+					if( $link ): ?>
+						<a class="menu-link" href="<?php echo esc_url( $link ); ?>">Careers Page</a>
+					<?php endif;
+				}
+			}
+
 
 			get_template_part( 'template-parts/content', 'page' );
 
