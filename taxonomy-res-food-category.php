@@ -23,6 +23,14 @@ get_header();
 
 			<?php
 
+
+				$image = get_field('image_single_menu', 'option');
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size );
+				}
+
+
 $terms = get_terms( 
     array(
         'taxonomy' => 'res-food-category',
@@ -47,7 +55,7 @@ if ( $terms && ! is_wp_error($terms) ) : ?>
 			<?php  
 			while ( have_posts() ) :
 				the_post();
-			?>
+			?>		
 
 	
 				<article class="menu-card">

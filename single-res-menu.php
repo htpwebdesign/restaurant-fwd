@@ -16,6 +16,12 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
+			$image = get_field('image_single_menu', 'option');
+			$size = 'large'; // (thumbnail, medium, large, full or custom size)
+			if( $image ) {
+				echo wp_get_attachment_image( $image, $size );
+			}
+
 			get_template_part( 'template-parts/content', get_post_type() );
 
 			the_post_navigation(

@@ -22,6 +22,13 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
+
+			$image = get_field('image_menu', 'option');
+			$size = 'large'; // (thumbnail, medium, large, full or custom size)
+			if( $image ) {
+				echo wp_get_attachment_image( $image, $size );
+			}
+
 $terms = get_terms( 
     array(
         'taxonomy' => 'res-food-category',
