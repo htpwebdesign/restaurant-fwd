@@ -27,10 +27,10 @@ get_header();
 				echo wp_get_attachment_image( $image, $size );
 			}
 			if ( function_exists ( 'get_field' ) ) {
-				if ( get_field( 'career_summary' ) ) {
+				if ( get_field( 'career_summary', 'option' ) ) {
 					?>
 					<section class= "career-summary">
-					 <p><?php the_field( 'career_summary' );?> </p>
+					 <p><?php the_field( 'career_summary', 'option' );?> </p>
 					</section> 
 					<?php
 				}
