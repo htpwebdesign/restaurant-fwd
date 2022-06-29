@@ -34,7 +34,6 @@ if ( $terms && ! is_wp_error($terms) ) : ?>
         <h2>Explore our menu</h2>
 			<ul>
 				<?php foreach ( $terms as $term ) : ?>
-					<?php if($term == parent) ?>
 					<li>
 						<a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?></a>
 					</li>
