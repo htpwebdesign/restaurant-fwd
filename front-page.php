@@ -32,46 +32,15 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-<<<<<<< Updated upstream
-				$args = array(
-					'post_type'        => 'res-careers',
-					'posts_per_page'=>    -1,
-					);
-			
-					$query = new WP_Query( $args );
-					if ( $query -> have_posts() ) 
-						?>
-						<section class="hero-section">
-						<?php
-							while( $query -> have_posts() ) 
-								$query -> the_post();
-								?>
-										<h2><?php the_title(); ?></h2>
-									<?php 
-												if ( function_exists ( 'get_field' ) ) {
-													if ( get_field( 'intro_message' ) ) {
-														?>
-														<section class= "intro_message">
-														 <p><?php the_field( 'intro_message' );?> </p>
-														</section> 
-														<?php
-													}
-													if ( get_field( 'intro_message' ) ) {
-														?>
-														<section class= "job-pay">
-														 <p> <?php the_field( 'job_pay' ); ?> </p>
-														</section> 
-														<?php
-													}
-												}
-=======
+				
+
 				
 				$image = get_field('image_home', 'option');
-				$size = 'banner-image'; // (thumbnail, medium, large, full or custom size)
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $image ) {
 					echo wp_get_attachment_image( $image, $size );
 				}
->>>>>>> Stashed changes
+
 
 				/*
 				 * Include the Post-Type-specific template for the content.
