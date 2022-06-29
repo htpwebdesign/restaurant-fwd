@@ -13,30 +13,11 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-	<?php 
-		if ( function_exists ( 'get_field' ) ) {
-			if ( get_field( 'restaurant_name', 'option' ) ) {
-	?>
-		<section class= "restaurant-section">
-			<h3><?php the_field( 'restaurant_name', 'option' );?> </h3> 
-	<?php
-		}
-		if ( get_field( 'restaurant_hours', 'option' ) ) {
-			?>
-					<p><?php the_field( 'restaurant_hours', 'option' );?> </p>
 			<?php
-			}
-			if ( get_field( 'restaurant_phone_number', 'option' ) ) {
-				?>
-						<p><?php the_field( 'restaurant_phone_number', 'option' );?> </p>
-					</section> 
-				<?php
-				}
-		}
-
-	
-	
-	?>			
+				wp_nav_menu( array( 
+					'theme_location' => 'footer-menu', 
+					'container_class' => 'footer-menu' ) ); 
+			?>			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

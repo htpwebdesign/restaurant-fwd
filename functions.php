@@ -50,6 +50,7 @@ function restaurant_fwd_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'restaurant-fwd' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'restaurant-fwd' ),
 		)
 	);
 
@@ -195,3 +196,5 @@ if( function_exists('acf_add_options_page') ) {
 // Banner Image Size
 
 add_image_size( 'banner-image', 1600, 500, true );
+
+// Create Footer Menu
