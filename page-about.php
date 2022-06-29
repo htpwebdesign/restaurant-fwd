@@ -21,6 +21,13 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
+			$image = get_field('image_about', 'option');
+			$size = 'large'; // (thumbnail, medium, large, full or custom size)
+			if( $image ) {
+				echo wp_get_attachment_image( $image, $size );
+			}
+
+
 			get_template_part( 'template-parts/content', 'page' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
@@ -34,5 +41,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
