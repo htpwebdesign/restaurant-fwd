@@ -28,39 +28,72 @@ get_header();
 				<?php
 			endif;
 
-			$args = array(
-				'post_type'        => 'res-home',
-				'posts_per_page'=>    -1,
-				);
-		
-				$query = new WP_Query( $args );
-				if ( $query -> have_posts() ) 
-					?>
+			?>
 					<section class="hero-section">
 					<?php
-						while( $query -> have_posts() ) 
-							$query -> the_post();
-							?>
-									<h2><?php the_title(); ?></h2>
-								<?php 
+								while ( have_posts() ) :
+									the_post();
+
+									// Output Hero Image and Text
+						
+									$image = get_field('image_home', 'option');
+									$size = 'large'; // (thumbnail, medium, large, full or custom size)
+									if( $image ) {
+										echo wp_get_attachment_image( $image, $size );
+									}
+						
 											if ( function_exists ( 'get_field' ) ) {
-												if ( get_field( 'intro_message' ) ) {
+												if ( get_field( 'hero_home_text', 'option' ) ) {
 													?>
-													<section class= "intro_message">
-													 <p><?php the_field( 'intro_message' );?> </p>
-													</section> 
-													<?php
-												}
-												if ( get_field( 'intro_message' ) ) {
-													?>
-													<section class= "job-pay">
-													 <p> <?php the_field( 'job_pay' ); ?> </p>
+													<section class= "hero-home-text">
+													 <p><?php the_field( 'hero_home_text', 'option' );?> </p>
 													</section> 
 													<?php
 												}
 											}
 
+
+									//  Output Our Menu CTA
+
+									if ( function_exists ( 'get_field' ) ) {
+										if ( get_field( 'cta_menu_heading' ) ) {
+											?>
+											<section class= "cta-menu-heading">
+											 <h2><?php the_field( 'cta_menu_heading',  );?> </h2>
+											</section> 
+											<?php
+										}
+										if ( get_field( 'cta_menu_text' ) ) {
+											?>
+											<section class= "cta-menu-text">
+											 <p><?php the_field( 'cta_menu_text',  );?> </p>
+											</section> 
+											<?php
+										}
+									}
+
 			endwhile;
+
+			$term = get_queried_object();
+			$images = get_field('cta_menu_gallery', $term);
+			$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+			if( $images ): ?>
+				<ul>
+					<?php foreach( $images as $image_id ): ?>
+						<li>
+							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif;
+
+				if ( get_field( 'cta_menu_link' ) ) {
+					?>
+					<section class= "cta-menu-link">
+					<p><?php the_field( 'cta_menu_link',  );?> </p>
+					</section> 
+					<?php
+				}
 
 			the_posts_navigation();
 
