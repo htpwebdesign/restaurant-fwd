@@ -12,6 +12,27 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
+
+	$terms = get_terms( 
+		array(
+			'taxonomy' => 'res-careers',
+			'parent'   => 0,
+			'hide_empty' => false,
+		) 
+	);
+	if ( $terms && ! is_wp_error($terms) ) : ?>
+		<section>
+			<h2>Sort By Location:</h2>
+				<ul>
+					<?php foreach ( $terms as $term ) : ?>
+						<li>
+							<a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?></a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+		</section>
+	<?php endif;
+
 	$args = array(
 		'post_type'        => 'res-careers',
 		'posts_per_page'=>    -1,
