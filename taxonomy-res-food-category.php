@@ -129,5 +129,5 @@ if ( $terms && ! is_wp_error($terms) ) : ?>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

@@ -15,7 +15,7 @@
 
 	$terms = get_terms( 
 		array(
-			'taxonomy' => 'res-careers',
+			'taxonomy' => 'res-career-location',
 			'parent'   => 0,
 			'hide_empty' => false,
 		) 
