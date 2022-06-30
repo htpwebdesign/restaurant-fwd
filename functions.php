@@ -45,6 +45,7 @@ function restaurant_fwd_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'banner-image', 1600, 500, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -120,19 +121,7 @@ add_action( 'after_setup_theme', 'restaurant_fwd_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function restaurant_fwd_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'restaurant-fwd' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'restaurant-fwd' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
+
 add_action( 'widgets_init', 'restaurant_fwd_widgets_init' );
 
 /**
@@ -180,9 +169,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 //cpt taxonomies
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
-add_action( 'init', 'res_register_custom_post_types');
-
-add_action( 'init', 'res_register_taxonomies');
 
 
 // Create Options Page
@@ -195,6 +181,6 @@ if( function_exists('acf_add_options_page') ) {
 
 // Banner Image Size
 
-add_image_size( 'banner-image', 1600, 500, true );
+
 
 // Create Footer Menu

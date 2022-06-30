@@ -23,7 +23,7 @@ get_header();
 
 			<?php
 
-			get_template_part( 'template-parts/careers', get_post_type() );
+			get_template_part( 'template-parts/careers');
 
 			the_posts_navigation();
 

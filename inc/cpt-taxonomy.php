@@ -139,6 +139,8 @@ register_post_type( 'res-menu', $args );
 
 }
 
+add_action( 'init', 'res_register_custom_post_types');
+
 function res_register_taxonomies() {
     //Register food taxonomy 
     $labels = array(
@@ -196,4 +198,15 @@ function res_register_taxonomies() {
     register_taxonomy( 'res-career-location', array( 'res-careers' ), $args );
 
 }
+
+add_action( 'init', 'res_register_taxonomies');
+
+
+function res_rewrite_flush(){
+    res_register_taxonomies();
+    res_register_custom_post_types();
+    flush_rewrite_rules();
+}
+
+add_action( 'init', 'res_rewrite_flush');
 ?>

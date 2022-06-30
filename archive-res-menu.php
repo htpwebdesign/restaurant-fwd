@@ -29,25 +29,25 @@ get_header();
 				echo wp_get_attachment_image( $image, $size );
 			}
 
-$terms = get_terms( 
-    array(
-        'taxonomy' => 'res-food-category',
-		'parent'   => 0,
-		'hide_empty' => false,
-    ) 
-);
-if ( $terms && ! is_wp_error($terms) ) : ?>
-    <section>
-        <h2>Explore our menu</h2>
-			<ul>
-				<?php foreach ( $terms as $term ) : ?>
-					<li>
-						<a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?></a>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-    </section>
-<?php endif; ?>
+			$terms = get_terms( 
+				array(
+					'taxonomy' => 'res-food-category',
+					'parent'   => 0,
+					'hide_empty' => false,
+				) 
+			);
+			if ( $terms && ! is_wp_error($terms) ) : ?>
+				<section>
+					<h2>Explore our menu</h2>
+						<ul>
+							<?php foreach ( $terms as $term ) : ?>
+								<li>
+									<a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?></a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+				</section>
+			<?php endif; ?>
 
 	</main><!-- #main -->
 

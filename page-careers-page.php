@@ -29,15 +29,13 @@ get_header();
 			if ( function_exists ( 'get_field' ) ) {
 				if ( get_field( 'career_summary', 'option' ) ) {
 					?>
-					<section class= "career-summary">
-					 <p><?php the_field( 'career_summary', 'option' );?> </p>
-					</section> 
+					 <p lass= "career-summary"><?php the_field( 'career_summary', 'option' );?> </p>
 					<?php
 				}
 			}			
 
 
-			get_template_part( 'template-parts/careers', 'page' );
+			get_template_part( 'template-parts/careers' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

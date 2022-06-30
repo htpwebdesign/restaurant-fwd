@@ -18,20 +18,12 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			?>
 					<section class="hero-section">
+						<h1><?php the_title(); ?></h1>
 					<?php
+
+					
 								while ( have_posts() ) :
 									the_post();
 
@@ -52,29 +44,30 @@ get_header();
 													<?php
 												}
 											}
-
-
+											?>
+										</section>
+											
+										<section class="menu-cta">
+											<?php  
 									//  Output Our Menu CTA
 
 									if ( function_exists ( 'get_field' ) ) {
 										if ( get_field( 'cta_menu_heading' ) ) {
 											?>
-											<section class= "cta-menu-heading">
-											 <h2><?php the_field( 'cta_menu_heading',  );?> </h2>
-											</section> 
+											 <h2 class= "cta-menu-heading"><?php the_field( 'cta_menu_heading',  );?> </h2>
 											<?php
 										}
 										if ( get_field( 'cta_menu_text' ) ) {
 											?>
-											<section class= "cta-menu-text">
-											 <p><?php the_field( 'cta_menu_text',  );?> </p>
-											</section> 
+											 <p class= "cta-menu-text"><?php the_field( 'cta_menu_text',  );?> </p>
 											<?php
 										}
 									}
-
+									?>
+									
+									<?php
 			endwhile;
-
+	
 			// Our Menu Continued outside of loop
 
 			$term = get_queried_object();
@@ -91,17 +84,24 @@ get_header();
 			<?php endif;
 
 			$link = get_field('cta_menu_link');
-			if( $link ): ?>
-				<a class="menu-link" href="<?php echo esc_url( $link ); ?>">Menu</a>
-			<?php endif;
+			if( $link ) : 
+				$link_url = $link['url'];
+				$link_title = $link['title'];
+				$link_target = $link['target'] ? $link['target'] : '_self';
+				?>
+				<a class="button" 
+					href="<?php echo esc_url( $link_url ); ?>" 
+					target="<?php echo esc_attr( $link_target ); ?>">
+					<?php echo esc_html( $link_title ); ?></a>
+				<?php endif; ?>
 
+				<?php  
 			the_posts_navigation();
 
-		else :
+			?>
+			</section>
+				<?php 
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
 
 		echo do_shortcode('[instagram-feed feed=3]');
 		?>

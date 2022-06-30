@@ -52,16 +52,12 @@
 									if ( function_exists ( 'get_field' ) ) {
 										if ( get_field( 'job_description' ) ) {
 											?>
-											<section class= "job-description">
-											 <p><?php the_field( 'job_description' );?> </p>
-											</section> 
+											 <p class= "job-description"><?php the_field( 'job_description' );?> </p>
 											<?php
 										}
 										if ( get_field( 'job_pay' ) ) {
 											?>
-											<section class= "job-pay">
-											 <p> <?php the_field( 'job_pay' ); ?> </p>
-											</section> 
+											<p class= "job-pay"> <?php the_field( 'job_pay' ); ?> </p>
 											<?php
 										}
 									}
