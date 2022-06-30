@@ -21,7 +21,7 @@
 					if ( function_exists ( 'get_field' ) ) {
 						if ( get_field( 'restaurant_name', 'option' ) ) {
 							?>
-							<section class= "restaurant-info">
+							<section class= "restaurant-info-1">
 							 <h3><?php the_field( 'restaurant_name', 'option' );?> </h3>
 							<?php
 						}
@@ -33,6 +33,25 @@
 						if ( get_field( 'restaurant_phone_number', 'option' ) ) {
 							?>
 							 <p><?php the_field( 'restaurant_phone_number', 'option' );?> </p>
+							</section>
+							<?php
+						}
+						
+
+						if ( get_field( 'restaurant_name_s', 'option' ) ) {
+							?>
+							<section class= "restaurant-info-2">
+							 <h3><?php the_field( 'restaurant_name_s', 'option' );?> </h3>
+							<?php
+						}
+						if ( get_field( 'restaurant_hours_s', 'option' ) ) {
+							?>
+							 <p><?php the_field( 'restaurant_hours_s', 'option' );?> </p>
+							<?php
+						}
+						if ( get_field( 'restaurant_phone_number_s', 'option' ) ) {
+							?>
+							 <p><?php the_field( 'restaurant_phone_number_s', 'option' );?> </p>
 							</section>
 							<?php
 						}
