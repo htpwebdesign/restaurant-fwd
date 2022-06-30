@@ -16,7 +16,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			$image = get_field('image_single_menu', 'option');
+			$image = get_field('image_single_menu');
 			$size = 'large'; // (thumbnail, medium, large, full or custom size)
 			if( $image ) {
 				echo wp_get_attachment_image( $image, $size );

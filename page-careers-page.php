@@ -21,15 +21,15 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			$image = get_field('image_careers', 'option');
+			$image = get_field('image_careers');
 			$size = 'full'; // (thumbnail, medium, large, full or custom size)
 			if( $image ) {
 				echo wp_get_attachment_image( $image, $size );
 			}
 			if ( function_exists ( 'get_field' ) ) {
-				if ( get_field( 'career_summary', 'option' ) ) {
+				if ( get_field( 'career_summary') ) {
 					?>
-					 <p lass= "career-summary"><?php the_field( 'career_summary', 'option' );?> </p>
+					 <p lass= "career-summary"><?php the_field( 'career_summary');?> </p>
 					<?php
 				}
 			}			

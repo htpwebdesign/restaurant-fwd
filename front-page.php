@@ -29,17 +29,17 @@ get_header();
 
 									// Output Hero Image and Text
 						
-									$image = get_field('image_home', 'option');
+									$image = get_field('image_home');
 									$size = 'large'; // (thumbnail, medium, large, full or custom size)
 									if( $image ) {
 										echo wp_get_attachment_image( $image, $size );
 									}
 						
 											if ( function_exists ( 'get_field' ) ) {
-												if ( get_field( 'hero_home_text', 'option' ) ) {
+												if ( get_field( 'hero_home_text') ) {
 													?>
 													<section class= "hero-home-text">
-													 <p><?php the_field( 'hero_home_text', 'option' );?> </p>
+													 <p><?php the_field( 'hero_home_text');?> </p>
 													</section> 
 													<?php
 												}
