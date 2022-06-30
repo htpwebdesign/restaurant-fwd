@@ -103,7 +103,7 @@ get_header();
 
 		endif;
 
-		echo do_shortcode('[instagram-feed feed=2]');
+		echo do_shortcode('[instagram-feed feed=3]');
 		?>
 
 	</main><!-- #main -->
