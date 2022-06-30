@@ -116,13 +116,6 @@ function restaurant_fwd_content_width() {
 }
 add_action( 'after_setup_theme', 'restaurant_fwd_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-
-add_action( 'widgets_init', 'restaurant_fwd_widgets_init' );
 
 /**
  * Enqueue scripts and styles.

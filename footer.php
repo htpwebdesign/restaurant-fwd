@@ -17,11 +17,13 @@
 				wp_nav_menu( array( 
 					'theme_location' => 'footer-menu', 
 					'container_class' => 'footer-menu' ) );
+					?>
 			
+					<section class= "restaurant-info-1">
+					<?php  
 					if ( function_exists ( 'get_field' ) ) {
 						if ( get_field( 'restaurant_name', 'option' ) ) {
 							?>
-							<section class= "restaurant-info-1">
 							 <h3><?php the_field( 'restaurant_name', 'option' );?> </h3>
 							<?php
 						}
@@ -33,14 +35,15 @@
 						if ( get_field( 'restaurant_phone_number', 'option' ) ) {
 							?>
 							 <p><?php the_field( 'restaurant_phone_number', 'option' );?> </p>
-							</section>
-							<?php
+							 <?php
 						}
-						
+						?>
+						</section>
+						<section class= "restaurant-info-2">
+						<?php  
 
 						if ( get_field( 'restaurant_name_s', 'option' ) ) {
 							?>
-							<section class= "restaurant-info-2">
 							 <h3><?php the_field( 'restaurant_name_s', 'option' );?> </h3>
 							<?php
 						}
@@ -52,12 +55,12 @@
 						if ( get_field( 'restaurant_phone_number_s', 'option' ) ) {
 							?>
 							 <p><?php the_field( 'restaurant_phone_number_s', 'option' );?> </p>
-							</section>
-							<?php
+							 <?php
 						}
 					}
-			
-			?>			
+					?>
+					</section>
+					
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
