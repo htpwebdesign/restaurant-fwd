@@ -58,7 +58,7 @@ if ( $terms && ! is_wp_error($terms) ) : ?>
 			?>		
 
 	
-				<article class="menu-card">
+				<article <?php post_class( 'menu-card' ); ?>>
 				<h2><?php the_title(); ?></h2>
 
 				<?php 

@@ -46,7 +46,7 @@
 				while( $query -> have_posts() ) {
 					$query -> the_post();
 					?>
-					<article class="student-card">
+					<article <?php post_class(' careers-card'); ?>>
 							<h2><?php the_title(); ?></h2>
 						<?php 
 									if ( function_exists ( 'get_field' ) ) {
