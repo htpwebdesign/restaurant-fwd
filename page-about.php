@@ -34,15 +34,27 @@ get_header();
 						<p><?php the_field('intro_paragraph'); ?></p>
 					</section>
 					<?php
-					
-					$link = get_field('careers_cta');
-					if( $link ): ?>
-						<a class="menu-link" href="<?php echo esc_url( $link ); ?>">Careers Page</a>
-					<?php endif;
-				}
-			}
+					?>
+				<div class="careers-cta-wrapper">
+					<?php 
+						if( get_field('cta_text')){
+							?>
+							<section class="cta-text">
+								<p><?php the_field('cta_text'); ?></p>
+							</section>
+							<?php 
+						}
+					?>
+					<?php  
+						$link = get_field('careers_cta');
+						if( $link ): ?>
+							<a class="menu-link" href="<?php echo esc_url( $link ); ?>">Careers Page</a>
+						<?php endif; ?>
+				<?php } ?>	
+				</div>
+			<?php } ?>
 
-
+			<?php
 			get_template_part( 'template-parts/content', 'page' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
