@@ -129,6 +129,9 @@ function restaurant_fwd_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	wp_enqueue_script('isotope', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery','imagesloaded'), '3.0.6', true);
+	
+	wp_enqueue_script('isotope_init', get_stylesheet_directory_uri() . '/js/isotope-init.js', array('isotope'), '3.0.6', true);	
 }
 add_action( 'wp_enqueue_scripts', 'restaurant_fwd_scripts' );
 
