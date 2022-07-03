@@ -83,6 +83,27 @@ get_header();
 				</ul>
 			<?php endif;
 
+			$images = get_field('cta_menu_gallery');
+			if( $images ): ?>
+
+			<div class = "gallery">
+
+				<div class="row">
+
+					<?php foreach( $images as $image ): ?>
+							<a href="<?php echo esc_url($image['url']); ?>">
+								<img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							</a>
+							<p><?php echo esc_html($image['caption']); ?></p>
+				
+					<?php endforeach; ?>
+					
+				</div>
+
+			</div>
+	
+			<?php endif;
+
 			$link = get_field('cta_menu_link');
 			if( $link ) : 
 				$link_url = $link['url'];

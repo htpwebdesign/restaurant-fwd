@@ -124,7 +124,16 @@ function restaurant_fwd_scripts() {
 	wp_enqueue_style( 'restaurant-fwd-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'restaurant-fwd-style', 'rtl', 'replace' );
 
+	wp_enqueue_style( 'magnific', get_stylesheet_uri() . '/magnific.js');
+
+
 	wp_enqueue_script( 'restaurant-fwd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'magnific', get_template_directory_uri() . '/js/magnific.js', array('jquery'));
+
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array('jquery'));
+
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
