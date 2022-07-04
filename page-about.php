@@ -14,6 +14,8 @@
 
 get_header();
 ?>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlc0CQZKqH8D3hXgsuXY3QYWwIlWEO8Sw
+&callback=initMap"></script>
 
 	<main id="primary" class="site-main">
 
@@ -24,7 +26,7 @@ get_header();
 			get_template_part( 'template-parts/content', 'page' );
 
 
-			$image = get_field('image_about', 'option');
+			$image = get_field('image_about');
 			$size = 'large'; // (thumbnail, medium, large, full or custom size)
 			if( $image ) {
 				echo wp_get_attachment_image( $image, $size );

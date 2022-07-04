@@ -29,17 +29,17 @@ get_header();
 
 									// Output Hero Image and Text
 						
-									$image = get_field('image_home', 'option');
+									$image = get_field('image_home');
 									$size = 'large'; // (thumbnail, medium, large, full or custom size)
 									if( $image ) {
 										echo wp_get_attachment_image( $image, $size );
 									}
 						
 											if ( function_exists ( 'get_field' ) ) {
-												if ( get_field( 'hero_home_text', 'option' ) ) {
+												if ( get_field( 'hero_home_text') ) {
 													?>
 													<section class= "hero-home-text">
-													 <p><?php the_field( 'hero_home_text', 'option' );?> </p>
+													 <p><?php the_field( 'hero_home_text');?> </p>
 													</section> 
 													<?php
 												}
@@ -68,19 +68,23 @@ get_header();
 									<?php
 			endwhile;
 	
-			// Our Menu Continued outside of loop
+			// Our Menu CTA Gallery
 
-			$term = get_queried_object();
-			$images = get_field('cta_menu_gallery', $term);
-			$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+			$images = get_field('cta_menu_gallery');
 			if( $images ): ?>
-				<ul>
-					<?php foreach( $images as $image_id ): ?>
-						<li>
-							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-						</li>
-					<?php endforeach; ?>
-				</ul>
+
+				<div class = "gallery">
+
+						<?php foreach( $images as $image ): ?>
+								<a href="<?php echo $image['url']; ?>" title="<?php echo $image['title']; ?>">
+									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								</a>
+					
+						<?php endforeach; ?>
+						
+
+				</div>
+	
 			<?php endif;
 
 			$link = get_field('cta_menu_link');
