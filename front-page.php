@@ -86,21 +86,17 @@ get_header();
 			$images = get_field('cta_menu_gallery');
 			if( $images ): ?>
 
-			<div class = "gallery">
+				<div class = "gallery">
 
-				<div class="row">
-
-					<?php foreach( $images as $image ): ?>
-							<a href="<?php echo esc_url($image['url']); ?>">
-								<img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-							</a>
-							<p><?php echo esc_html($image['caption']); ?></p>
-				
-					<?php endforeach; ?>
+						<?php foreach( $images as $image ): ?>
+								<a href="<?php echo $image['url']; ?>" title="<?php echo $image['title']; ?>">
+									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								</a>
 					
-				</div>
+						<?php endforeach; ?>
+						
 
-			</div>
+				</div>
 	
 			<?php endif;
 

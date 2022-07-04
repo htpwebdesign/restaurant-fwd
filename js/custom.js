@@ -3,7 +3,11 @@ jQuery('.gallery').magnificPopup({
     type: 'image',
     gallery: {
         enabled: true,
-        navigateByImgClick: true,
-    }
+        // navigateByImgClick: true,
+    },
+    // image: {
+    //     titleSrc: 'title'
+    // }
+
     // other options
   });
