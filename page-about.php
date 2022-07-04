@@ -14,6 +14,8 @@
 
 get_header();
 ?>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlc0CQZKqH8D3hXgsuXY3QYWwIlWEO8Sw
+&callback=initMap"></script>
 
 	<main id="primary" class="site-main">
 

@@ -137,6 +137,10 @@ function restaurant_fwd_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	wp_enqueue_script('isotope', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery','imagesloaded'), '3.0.6', true);
+	wp_enqueue_script('isotope-settings', get_template_directory_uri() . '/js/isotope.js', array('isotope', 'jquery'));
+	
+	wp_enqueue_script('isotope_init', get_stylesheet_directory_uri() . '/js/isotope-init.js', array('isotope'), '3.0.6', true);	
 }
 add_action( 'wp_enqueue_scripts', 'restaurant_fwd_scripts' );
 
@@ -180,8 +184,16 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
-// Banner Image Size
+function isotope_food_category($id) {
+	$classes = "";
+	$terms = wp_get_post_terms( get_the_id(), 'res-food-category');
+	foreach ($terms as $term) {
+		$classes .= $term->slug. '';
+	}
+}
 
-
-
-// Create Footer Menu
+// function my_acf_google_map_api( $api ){
+//     $api['key'] = 'AIzaSyC02bQ-0U50NuFRuMkSpurZ0GC2EVzyly0';
+//     return $api;
+// }
+// add_action('acf/init', 'my_acf_google_map_api');
