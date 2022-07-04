@@ -68,7 +68,7 @@ get_header();
 									<?php
 			endwhile;
 	
-			// Our Menu Continued outside of loop
+			// Our Menu CTA Gallery
 
 			$images = get_field('cta_menu_gallery');
 			if( $images ): ?>
