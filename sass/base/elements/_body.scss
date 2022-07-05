@@ -3,14 +3,38 @@ body {
 }
 
 // Home page hero section
-
 .hero-home-text{
 	h3,p{
 		text-align: center;
-		z-index: 999;
+		z-index: 99999;
 		font-size: 2.5rem;
+		position: relative;
+		color: white;
+		text-shadow: 3px 4px 12px #010101;
 	}
 }
+@media (max-width:600px) {
+	.hero-home-text{
+		h3,p{
+			font-size: 2rem;
+		}
+	}
+}
+
+// Menu CTA section
 .menu-cta{
-	margin-top: 15rem;
+	margin-top: 5rem;
+	background-color: #083C30;
+	.cta-menu-heading{
+		font-size: 2rem;
+		padding-top: 3rem;
+		text-align: center;
+		color: white;
+	}
+	.cta-menu-text{
+		text-align: center;
+		width: 200px;
+		margin: 0 auto;
+		color: white;
+	}
 }
