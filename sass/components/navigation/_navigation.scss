@@ -1,6 +1,7 @@
 .main-navigation {
 	display: block;
 	width: 100%;
+	z-index: 1000;
 
 	ul {
 		display: none;
@@ -117,8 +118,10 @@
 	.site-title{
 		font-size: 2rem;
 		margin-left: 6rem;
+		
 		a{
 			text-decoration: none;
+			color: white;
 		}
 	}
 	.main-navigation{
@@ -128,6 +131,9 @@
 		
 		.menu-item{
 			padding-right: 1rem;
+			a{
+				color: white;
+			}
 		}
 		.nav-menu{
 			.sub-menu{
@@ -135,5 +141,15 @@
 			}
 		}
 	}
-	
+}
+@media (max-width: 600px) {
+	.site-header{
+		align-items: center;
+		.site-title{
+			margin-left: 2rem;
+		}
+		.main-navigation{
+			margin-right: 2rem;
+		}
+	}
 }

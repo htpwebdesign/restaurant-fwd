@@ -1,3 +1,16 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 }
+
+// Home page hero section
+
+.hero-home-text{
+	h3,p{
+		text-align: center;
+		z-index: 999;
+		font-size: 2.5rem;
+	}
+}
+.menu-cta{
+	margin-top: 15rem;
+}
