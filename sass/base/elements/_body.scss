@@ -1,5 +1,6 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	margin: 0;
 }
 
 // Home page hero section
@@ -106,3 +107,26 @@ body {
 }
 }
 
+@media (min-width:600px) {
+	.site{
+		.site-footer{
+			.site-info{
+				display: flex;
+				justify-content:space-evenly;
+				flex-direction: row-reverse;
+			}
+			.footer-menu{
+			 justify-content: flex-start;
+			}
+			.restaurant-info-1{
+				width: 150px;
+				margin-right: 10rem;
+			}
+			.restaurant-info-2{
+				width: 150px;
+				margin: 0;
+			}
+		}
+	}
+	
+}
