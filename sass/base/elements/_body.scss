@@ -1,3 +1,65 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 }
+.site-main{
+	margin-bottom: 10rem;
+	section{
+		h2{
+			text-align: center;
+			font-size: 2rem;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			margin-top: 8rem;
+			display: grid;
+			gap: 40px;
+			li{
+				height: 200px;
+				width: 300px;
+				margin: 0 auto;
+				background-color: bisque;
+				a{
+					text-decoration: none;
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 600px) {
+	.site-main{
+		section{
+			h2{
+				text-align: center;
+				font-size: 3rem;
+			}
+			ul{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				width: 500px;
+				margin: 0 auto;
+				margin-top: 8rem;
+				gap: 40px;
+				
+				li{
+					width: 100%;
+				}
+			}
+		}
+	}
+	
+}
+
+@media (min-width: 710px) {
+	.site-main{
+		section{
+			ul{
+				width: 700px;
+			}
+		}
+		}
+	}
