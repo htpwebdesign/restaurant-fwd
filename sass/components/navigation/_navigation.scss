@@ -1,6 +1,7 @@
 .main-navigation {
 	display: block;
 	width: 100%;
+	z-index: 1000;
 
 	ul {
 		display: none;
@@ -105,5 +106,50 @@
 	.nav-next {
 		text-align: end;
 		flex: 1 0 50%;
+	}
+}
+
+// Dukes Restaurant styling
+
+.site-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.site-title{
+		font-size: 2rem;
+		margin-left: 6rem;
+		
+		a{
+			text-decoration: none;
+			color: red;
+		}
+	}
+	.main-navigation{
+		width: auto;
+		margin: 1rem;
+		margin-right: 6rem;
+		
+		.menu-item{
+			padding-right: 1rem;
+			a{
+				color: red;
+			}
+		}
+		.nav-menu{
+			.sub-menu{
+				display: block;
+			}
+		}
+	}
+}
+@media (max-width: 600px) {
+	.site-header{
+		align-items: center;
+		.site-title{
+			margin-left: 2rem;
+		}
+		.main-navigation{
+			margin-right: 2rem;
+		}
 	}
 }
