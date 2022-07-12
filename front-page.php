@@ -108,8 +108,20 @@ get_header();
 
 
 		echo do_shortcode('[instagram-feed feed=3]');
+		?>
+
+
+		<?php
 
 		// ACF For Google Maps
+
+		if ( function_exists ( 'get_field' ) ) {
+			if ( get_field( 'maps_title', 'options' ) ) {
+				?>
+				 <h2 class= "maps-title"><?php the_field( 'maps_title', 'options' );?> </h2>
+				<?php
+			}
+		}
 		if( have_rows('locations', 'options') ): ?>
 			<div class="acf-map" data-zoom="16">
 			<?php while ( have_rows('locations', 'options') ) : the_row();
@@ -131,7 +143,6 @@ get_header();
 			</div>
 			<?php endif; ?>
 
-		 <!-- Locations ACF -->
 		
 
 	</main><!-- #main -->

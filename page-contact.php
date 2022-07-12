@@ -29,7 +29,37 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
-		?>
+	
+
+		// ACF For Google Maps
+
+		if ( function_exists ( 'get_field' ) ) {
+			if ( get_field( 'maps_title', 'options' ) ) {
+				?>
+				<h2 class= "maps-title"><?php the_field( 'maps_title', 'options' );?> </h2>
+				<?php
+			}
+		}
+		if( have_rows('locations', 'options') ): ?>
+			<div class="acf-map" data-zoom="16">
+			<?php while ( have_rows('locations', 'options') ) : the_row();
+			// Load sub field values.
+			$location = get_sub_field('google_maps', 'options');
+			$title = get_sub_field('title', 'options');
+			$description = get_sub_field('description', 'options');
+
+			?>
+			<div class="marker" data-lat="<?php echo
+			esc_attr($location['lat']); ?>" data-lng="<?php echo
+			esc_attr($location['lng']); ?>">
+			<h3><?php echo esc_html( $title ); ?></h3>
+			<p><em><?php echo esc_html( $location['address'] );
+			?></em></p>
+			<p><?php echo esc_html( $description ); ?></p>
+			</div>
+			<?php endwhile; ?>
+			</div>
+			<?php endif; ?>
 
 	</main><!-- #main -->
 
