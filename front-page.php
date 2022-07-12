@@ -108,7 +108,30 @@ get_header();
 
 
 		echo do_shortcode('[instagram-feed feed=3]');
-		?>
+
+		// ACF For Google Maps
+		if( have_rows('locations', 'options') ): ?>
+			<div class="acf-map" data-zoom="16">
+			<?php while ( have_rows('locations', 'options') ) : the_row();
+			// Load sub field values.
+			$location = get_sub_field('location', 'options');
+			$title = get_sub_field('description', 'options');
+			$description = get_sub_field('description', 'options');
+			?>
+			<div class="marker" data-lat="<?php echo
+			esc_attr($location['lat']); ?>" data-lng="<?php echo
+			esc_attr($location['lng']); ?>">
+			<h3><?php echo esc_html( $title ); ?></h3>
+			<p><em><?php echo esc_html( $location['address'] );
+			?></em></p>
+			<p><?php echo esc_html( $description ); ?></p>
+			</div>
+			<?php endwhile; ?>
+			</div>
+			<?php endif; ?>
+
+		 <!-- Locations ACF -->
+		
 
 	</main><!-- #main -->
 
