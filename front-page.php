@@ -114,9 +114,10 @@ get_header();
 			<div class="acf-map" data-zoom="16">
 			<?php while ( have_rows('locations', 'options') ) : the_row();
 			// Load sub field values.
-			$location = get_sub_field('location', 'options');
-			$title = get_sub_field('description', 'options');
+			$location = get_sub_field('google_maps', 'options');
+			$title = get_sub_field('title', 'options');
 			$description = get_sub_field('description', 'options');
+
 			?>
 			<div class="marker" data-lat="<?php echo
 			esc_attr($location['lat']); ?>" data-lng="<?php echo
