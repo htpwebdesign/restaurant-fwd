@@ -97,22 +97,9 @@ get_header();
 					href="<?php echo esc_url( $link_url ); ?>" 
 					target="<?php echo esc_attr( $link_target ); ?>">
 					<?php echo esc_html( $link_title ); ?></a>
-				<?php endif; 
+				<?php endif; ?>
 
-			if( have_rows('locations') ): ?>
-				<div class="acf-map" data-zoom="16">
-				<?php while ( have_rows('locations') ) : the_row();
-				// Load sub field values.
-					$location = get_sub_field('location');
-					$title = get_sub_field('description');
-					$description = get_sub_field('description');
-				?>
-				<div class="marker" data-lat="<?php echo
-				esc_attr($location['lat']); ?>" data-lng="<?php echo
-				esc_attr($location['lng']); ?>">
-
-			<?php
-
+				<?php  
 			the_posts_navigation();
 
 			?>
