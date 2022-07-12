@@ -115,24 +115,27 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	.site-title{
-		font-size: 2rem;
-		margin-left: 6rem;
-		
-		a{
+	margin-top: 1rem;
+	margin-bottom: 0;
+	.site-branding{
+		.custom-logo-link{
 			text-decoration: none;
-			color: red;
+			width: 125px;
+			margin-left: 2rem;
 		}
 	}
 	.main-navigation{
 		width: auto;
 		margin: 1rem;
-		margin-right: 6rem;
+		margin-right: 2rem;
 		
 		.menu-item{
 			padding-right: 1rem;
 			a{
-				color: red;
+				color: black;
+				font-family: 'Josefin Sans', sans-serif;
+				font-weight: 400;
+				font-size: 1.3rem;
 			}
 		}
 		.nav-menu{
@@ -142,14 +145,14 @@
 		}
 	}
 }
-@media (max-width: 600px) {
+@media (min-width: 600px) {
 	.site-header{
 		align-items: center;
-		.site-title{
-			margin-left: 2rem;
+		.site-branding{
+			margin-left: 4rem;
 		}
 		.main-navigation{
-			margin-right: 2rem;
+			margin-right: 4rem;
 		}
 	}
 }
