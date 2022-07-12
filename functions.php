@@ -190,6 +190,7 @@ function isotope_food_category($id) {
 	foreach ($terms as $term) {
 		$classes .= $term->slug. '';
 	}
+	return $classes;
 }
 
 // function my_acf_google_map_api( $api ){

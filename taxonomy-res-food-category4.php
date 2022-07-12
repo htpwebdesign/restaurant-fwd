@@ -14,7 +14,6 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-
 			<header class="page-header">
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -22,25 +21,46 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
-
-		<div class="button-group filter-button-group">
-			<button data-filter="*">Show All</button>
 			<?php
-				$terms = get_terms( array(
-					'taxonomy' => 'res-food-category',
-					'parent'   => get_queried_object()->term_id,
-					'hide_empty' => false,
-				));
-				foreach($terms as $term) {
-					echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
+
+
+				$image = get_field('image_single_menu', 'option');
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size );
 				}
-			?>
-							
- 
-	<?php  ?>
-				<article class="grid-item '.isotope_vendor_classes(get_the_id()).">
+
+
+$terms = get_terms( 
+    array(
+        'taxonomy' => 'res-food-category',
+		'parent'   => get_queried_object()->term_id,
+		'hide_empty' => false,
+    ) 
+);
+if ( $terms && ! is_wp_error($terms) ) : ?>
+    <section>
+        <h2>Explore our menu</h2>
+			<ul>
+				<?php foreach ( $terms as $term ) : ?>
+					<li>
+						<a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?></a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+    </section>
+
+<?php endif; ?>
+
+			<?php  
+			while ( have_posts() ) :
+				the_post();
+			?>		
+
+	
+				<article <?php post_class( 'menu-card' ); ?>>
 				<h2><?php the_title(); ?></h2>
-				
+
 				<?php 
 					if (function_exists('get_field') ) {
 						if ( get_field( 'food_description' ) ) {
@@ -75,11 +95,28 @@ get_header();
 						}
 					}
 
-
-
 				?>
-</div>
-		<?php  
+			</article>
+			<?php  
+
+			endwhile;
+
+			?>
+			<?php 
+				$term = get_queried_object();
+				$images = get_field('gallery', $term);
+				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				if( $images ): ?>
+					<ul>
+						<?php foreach( $images as $image_id ): ?>
+							<li>
+								<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+				<?php  
+
 			the_posts_navigation();
 
 		else :
@@ -89,8 +126,12 @@ get_header();
 		endif;
 		?>
 
+
+		<div class="container">
+			<?php $terms = get_terms( 'res-food-category' ); ?>
+		</div>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
