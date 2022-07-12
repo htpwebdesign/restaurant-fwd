@@ -23,9 +23,6 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
-
-
 			$image = get_field('image_about');
 			$size = 'large'; // (thumbnail, medium, large, full or custom size)
 			if( $image ) {

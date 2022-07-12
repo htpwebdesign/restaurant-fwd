@@ -1,6 +1,5 @@
 .main-navigation {
 	display: block;
-	width: 100%;
 	z-index: 1000;
 
 	ul {
@@ -113,48 +112,49 @@
 
 .site-header{
 	position: absolute;
+	margin-top: 2rem;
 	display: flex;
-	justify-content: space-between;
+	width: 100%;
 	align-items: center;
-	margin-top: 1rem;
-	margin-bottom: 0;
-	
+	justify-content: space-between;
 	.site-branding{
 		.custom-logo-link{
-			text-decoration: none;
-			width: 125px;
-			margin-left: 2rem;
+		 	text-decoration: none;
+		 	width: 125px;
+		 	margin-left: 2rem;
 		}
 	}
 	.main-navigation{
 		width: auto;
 		margin: 1rem;
 		margin-right: 2rem;
-		
-		.menu-item{
-			padding-right: 1rem;
-			a{
-				color: black;
-				font-family: 'Josefin Sans', sans-serif;
-				font-weight: 400;
-				font-size: 1.3rem;
+		 	.menu-item{
+		 		padding-right: 1rem;
+	 			a{
+					color: white;
+					font-family: 'Josefin Sans', sans-serif;
+					font-weight: 400;
+					font-size: 1.3rem;
+				}
 			}
-		}
-		.nav-menu{
-			.sub-menu{
-				display: block;
+			.nav-menu{
+				.sub-menu{
+					display: block;
+				}
 			}
-		}
 	}
 }
 @media (min-width: 600px) {
 	.site-header{
 		align-items: center;
 		.site-branding{
-			margin-left: 4rem;
+			margin-left: 2rem;
+			.custom-logo-link{
+				width: 220px;
+			}
 		}
 		.main-navigation{
-			margin-right: 4rem;
+			margin-right: 2rem;
 		}
 	}
 }
