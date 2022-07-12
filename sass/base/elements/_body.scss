@@ -25,31 +25,40 @@ body {
 // Menu CTA section
 .menu-cta{
 	margin-top: 5rem;
+	font-family: 'Josefin Sans', sans-serif;
 	margin-bottom: 5rem;
 	background-color: #083C30;
 	.cta-menu-heading{
-		font-size: 2rem;
-		padding-top: 3rem;
+		font-weight: 600;
+		font-style: italic;
+		font-size: 3rem;
 		text-align: center;
 		color: white;
 	}
 	.cta-menu-text{
 		text-align: center;
+		font-size: 1.3rem;
 		width: 200px;
 		margin: 0 auto;
 		color: white;
+		margin-bottom: 3rem;
 	}
-	a{
-		text-align: center;
-		background-color: #A77E58;
-		padding: 4px;
-		color: white;
-		width: 65px;
-		display: flex;
-		margin: 0 auto;
-		justify-content: center;
+	.button{
 		text-decoration: none;
-		border-radius: 10px;
+		color: white;
+		text-align: center;
+		display: table;
+		padding: .5rem;
+		border: 3px solid white;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 600px) {
+	.menu-cta{
+		.cta-menu-text{
+			width: 450px;
+		}
 	}
 }
 

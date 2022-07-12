@@ -112,11 +112,13 @@
 // Dukes Restaurant styling
 
 .site-header{
+	position: absolute;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 1rem;
 	margin-bottom: 0;
+	
 	.site-branding{
 		.custom-logo-link{
 			text-decoration: none;
