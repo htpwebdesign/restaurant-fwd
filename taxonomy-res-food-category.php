@@ -13,6 +13,7 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
+			
 
 
 			<header class="page-header">
@@ -35,50 +36,56 @@ get_header();
 					echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
 				}
 			?>
+		</div>
 							
  
 	<?php  ?>
-				<article class="grid-item '.isotope_vendor_classes(get_the_id()).">
-				<h2><?php the_title(); ?></h2>
-				
-				<?php 
-					if (function_exists('get_field') ) {
-						if ( get_field( 'food_description' ) ) {
-							?>
-							<section class= "food-description">
-								<p><?php the_field( 'food_description' );?> </p>
-							</section> 
-							<?php
+
+				<div class="grid">
+				<article class="grid-item .isotope_food_category">
+					<h2><?php the_title(); ?></h2>
+					
+					<?php 
+						if (function_exists('get_field') ) {
+							if ( get_field( 'food_description' ) ) {
+								?>
+								<section class= "food-description">
+									<p><?php the_field( 'food_description' );?> </p>
+								</section> 
+								<?php
+							}
+							if ( get_field( 'food_price' ) ) {
+								?>
+								<section class= "food-price">
+									<p> <?php the_field( 'food_price' ); ?> </p>
+								</section> 
+								<?php
+							}
+							if ( get_field( 'food_flavour' ) ) {
+								?>
+								<section class= "food-flavour">
+									<?php 
+										$flavors = get_field('food_flavour');
+										if ($flavors) :
+										?>
+										<ul>
+											<?php foreach( $flavors as $flavor) : ?>
+												<li><?php echo $flavor; ?></li>
+												<?php endforeach; ?>
+										</ul>
+										<?php endif; ?>
+								</section> 
+								<?php
+							}
 						}
-						if ( get_field( 'food_price' ) ) {
-							?>
-							<section class= "food-price">
-								<p> <?php the_field( 'food_price' ); ?> </p>
-							</section> 
-							<?php
-						}
-						if ( get_field( 'food_flavour' ) ) {
-							?>
-							<section class= "food-flavour">
-								<?php 
-									$flavors = get_field('food_flavour');
-									if ($flavors) :
-									?>
-									<ul>
-										<?php foreach( $flavors as $flavor) : ?>
-											<li><?php echo $flavor; ?></li>
-											<?php endforeach; ?>
-									</ul>
-									<?php endif; ?>
-							</section> 
-							<?php
-						}
-					}
+					?>
+
+				</article>
 
 
 
-				?>
-</div>
+				</div>
+
 		<?php  
 			the_posts_navigation();
 
