@@ -56,7 +56,6 @@ body {
 // Footer styles
 .site{
 	.site-footer{
-	margin-top: 10rem;
 	background-color: black;
 	.site-info{
 		.footer-menu{
@@ -134,12 +133,13 @@ body {
 
 // Menu Mobile Styling 
 .site-main{
-	margin-bottom: 10rem;
+	padding-bottom: 5rem;
 	// Main Categories styles, They are classless so they fall back on Unordered lists
 	section{
 		h2{
 			text-align: center;
 			font-size: 2rem;
+			color: white;		
 		}
 		ul{
 			list-style: none;
@@ -157,10 +157,10 @@ body {
 				width: 100px;
 				padding: 1rem;
 				margin: 0 auto;
-				background-color: bisque;
+				background-color: white;
 				a{
 					text-decoration: none;
-					color: black;
+					color: #083C30;
 				}
 			}
 		}
@@ -172,21 +172,24 @@ body {
 		margin: 0 auto;
 		padding: 5px;
 		margin-top: 2rem;
-		border: 3px solid black;
+		border: 3px solid white;
 		h2{
 			text-transform: capitalize;
 			text-align: center;
+			color: white;
 		}
 		.food-description{
 			text-align: center;
 			p{
 				margin: 0;
 				padding: 0;
+				color: white;
 			}
 		}
 		.food-price{
 			text-align: center;
 			font-weight: 500;
+			color: white;
 		}
 		}
 		// flavour list choices styling
@@ -247,3 +250,50 @@ body {
 		}
 		}
 	}
+
+
+// About Page Mobile styling
+
+.site-main{
+	background-color: #083C30;
+	.intro-paragraph{
+		color: white;
+		margin: 0 auto;
+		width: 280px;
+		text-align: center;
+		margin-top: 5rem;
+	}
+	.careers-cta-wrapper{
+		color: white;
+		padding-bottom: 5rem;
+		.cta-text{
+			margin-top: 5rem;
+			h1{
+				width: 290px;
+				margin: 0 auto;
+			}
+			h2{
+				font-size: 1rem;
+				font-weight: 400;
+			}
+		}
+		a{
+		text-decoration: none;
+		color: white;
+		text-align: center;
+		display: table;
+		padding: .5rem;
+		border: 3px solid white;
+		margin: 0 auto;
+	}
+	}
+	
+}
+
+@media (min-width: 700px) {
+	.site-main{
+		.intro-paragraph{
+			width: 600px;
+		}
+	}
+}
