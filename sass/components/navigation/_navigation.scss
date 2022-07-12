@@ -1,6 +1,5 @@
 .main-navigation {
 	display: block;
-	width: 100%;
 	z-index: 1000;
 
 	ul {
@@ -112,41 +111,47 @@
 // Dukes Restaurant styling
 
 .site-header{
+	position: absolute;
+	margin-top: 2rem;
 	display: flex;
-	justify-content: space-between;
+	width: 100%;
 	align-items: center;
-	.site-title{
-		font-size: 2rem;
-		margin-left: 6rem;
-		
-		a{
-			text-decoration: none;
-			color: red;
+	justify-content: space-between;
+	.site-branding{
+		.custom-logo-link{
+		 	text-decoration: none;
+		 	width: 125px;
+		 	margin-left: 2rem;
 		}
 	}
 	.main-navigation{
 		width: auto;
 		margin: 1rem;
-		margin-right: 6rem;
-		
-		.menu-item{
-			padding-right: 1rem;
-			a{
-				color: red;
+		margin-right: 2rem;
+		 	.menu-item{
+		 		padding-right: 1rem;
+	 			a{
+					color: white;
+					font-family: 'Josefin Sans', sans-serif;
+					font-weight: 400;
+					font-size: 1.3rem;
+				}
 			}
-		}
-		.nav-menu{
-			.sub-menu{
-				display: block;
+			.nav-menu{
+				.sub-menu{
+					display: block;
+				}
 			}
-		}
 	}
 }
-@media (max-width: 600px) {
+@media (min-width: 600px) {
 	.site-header{
 		align-items: center;
-		.site-title{
+		.site-branding{
 			margin-left: 2rem;
+			.custom-logo-link{
+				width: 220px;
+			}
 		}
 		.main-navigation{
 			margin-right: 2rem;

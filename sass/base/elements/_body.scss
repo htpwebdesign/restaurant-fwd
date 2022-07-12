@@ -3,6 +3,7 @@ body {
 	margin: 0;
 }
 
+
 // Home page hero section
 .hero-home-text{
 	h3,p{
@@ -25,31 +26,41 @@ body {
 // Menu CTA section
 .menu-cta{
 	margin-top: 5rem;
+	font-family: 'Josefin Sans', sans-serif;
 	margin-bottom: 5rem;
 	background-color: #083C30;
 	.cta-menu-heading{
-		font-size: 2rem;
-		padding-top: 3rem;
+		font-weight: 600;
+		font-style: italic;
+		font-size: 3rem;
 		text-align: center;
 		color: white;
+		margin-bottom: 3rem;
 	}
 	.cta-menu-text{
 		text-align: center;
+		font-size: 1.3rem;
 		width: 200px;
 		margin: 0 auto;
 		color: white;
+		margin-bottom: 3rem;
 	}
-	a{
-		text-align: center;
-		background-color: #A77E58;
-		padding: 4px;
-		color: white;
-		width: 65px;
-		display: flex;
-		margin: 0 auto;
-		justify-content: center;
+	.button{
 		text-decoration: none;
-		border-radius: 10px;
+		color: white;
+		text-align: center;
+		display: table;
+		padding: .5rem;
+		border: 3px solid white;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 600px) {
+	.menu-cta{
+		.cta-menu-text{
+			width: 450px;
+		}
 	}
 }
 
@@ -57,6 +68,8 @@ body {
 .site{
 	.site-footer{
 	background-color: black;
+	margin: 0;
+
 	.site-info{
 		.footer-menu{
 			text-align: center;
@@ -133,24 +146,31 @@ body {
 
 // Menu Mobile Styling 
 .site-main{
-	padding-bottom: 5rem;
+	padding-bottom: 7rem;
+	font-family: 'Josefin Sans', sans-serif;
 	// Main Categories styles, They are classless so they fall back on Unordered lists
 	section{
 		h2{
 			text-align: center;
-			font-size: 2rem;
-			color: white;		
+			margin: 0;
+			margin-top: 5rem;
+			font-size: 2.3rem;
+			color: white;
+			font-weight: 700;
+			font-style: italic;
+			
 		}
 		ul{
 			list-style: none;
 			padding: 0;
 			margin: 0;
 			text-align: center;
-			margin-top: 8rem;
+			
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			width: 200px;
 			margin: 0 auto;
+			margin-top: 5rem;
 			gap: 5px;
 			li{
 				// height: 200px;
@@ -223,8 +243,7 @@ body {
 				grid-template-columns: 1fr 1fr;
 				width: 200px;
 				margin: 0 auto;
-				margin-top: 8rem;
-				// gap: 40px;
+				margin-top: 5rem;
 				
 				li{
 					// width: 100%;
@@ -275,6 +294,7 @@ body {
 			h2{
 				font-size: 1rem;
 				font-weight: 400;
+				margin-top: 2rem;
 			}
 		}
 		a{
