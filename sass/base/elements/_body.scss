@@ -130,3 +130,120 @@ body {
 	}
 	
 }
+
+
+// Menu Mobile Styling 
+.site-main{
+	margin-bottom: 10rem;
+	// Main Categories styles, They are classless so they fall back on Unordered lists
+	section{
+		h2{
+			text-align: center;
+			font-size: 2rem;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			margin-top: 8rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 200px;
+			margin: 0 auto;
+			gap: 5px;
+			li{
+				// height: 200px;
+				width: 100px;
+				padding: 1rem;
+				margin: 0 auto;
+				background-color: bisque;
+				a{
+					text-decoration: none;
+					color: black;
+				}
+			}
+		}
+	}
+	// Menu Item styling 
+	.menu-card{
+		// background-color: beige;
+		width: 300px;
+		margin: 0 auto;
+		padding: 5px;
+		margin-top: 2rem;
+		border: 3px solid black;
+		h2{
+			text-transform: capitalize;
+			text-align: center;
+		}
+		.food-description{
+			text-align: center;
+			p{
+				margin: 0;
+				padding: 0;
+			}
+		}
+		.food-price{
+			text-align: center;
+			font-weight: 500;
+		}
+		}
+		// flavour list choices styling
+		.food-flavour{
+			margin: 0 auto;
+			
+			ul{
+				width: 300px;
+				display: grid;
+				margin: 0 auto;
+				grid-template-columns: 1fr 1fr;
+				gap: 5px;
+				li{
+					width: 100%;
+				}
+			}
+
+		}
+	}
+
+// Menu Desktop Styling
+@media (min-width: 600px) {
+	.site-main{
+		section{
+			h2{
+				text-align: center;
+				font-size: 3rem;
+			}
+			ul{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				width: 200px;
+				margin: 0 auto;
+				margin-top: 8rem;
+				// gap: 40px;
+				
+				li{
+					// width: 100%;
+				}
+			}
+		}
+		.menu-card{
+			width: 400px;
+		}
+	}
+	
+}
+
+@media (min-width: 710px) {
+	.site-main{
+		section{
+			ul{
+				width: 200px;
+			}
+		}
+		.menu-card{
+			width: 400px;
+		}
+		}
+	}
