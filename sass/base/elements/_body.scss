@@ -67,10 +67,11 @@ body {
 // Footer styles
 .site{
 	.site-footer{
+		
 	background-color: black;
 	margin: 0;
-
 	.site-info{
+		font-family: 'Josefin Sans', sans-serif;
 		.footer-menu{
 			text-align: center;
 			margin-bottom: 3rem;
@@ -94,6 +95,7 @@ body {
 		.restaurant-info-1{
 			text-align: center;
 			color: white;
+			position: relative;
 			margin-bottom: 3rem;
 			h3{
 				font-size: 1.5rem;
@@ -124,20 +126,25 @@ body {
 		.site-footer{
 			.site-info{
 				display: flex;
-				justify-content:space-evenly;
+				justify-content: space-evenly;
 				flex-direction: row-reverse;
+				align-items: center;
 			}
 			.footer-menu{
 			 justify-content: flex-start;
 			}
-			.restaurant-info-1{
+			.res-info-div{
+				display: flex;
+				.restaurant-info-1{
 				width: 150px;
-				margin-right: 10rem;
-			}
-			.restaurant-info-2{
+				margin-right: 2rem;
+				}
+				.restaurant-info-2{
 				width: 150px;
 				margin: 0;
+				}
 			}
+			
 		}
 	}
 	

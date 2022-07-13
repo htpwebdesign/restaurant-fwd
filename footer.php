@@ -18,7 +18,7 @@
 					'theme_location' => 'footer-menu', 
 					'container_class' => 'footer-menu' ) );
 					?>
-			
+				<div class='res-info-div'>
 					<section class= "restaurant-info-1">
 					<?php  
 					if ( function_exists ( 'get_field' ) ) {
@@ -62,6 +62,7 @@
 
 					?>
 					</section>
+				</div>
 					
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
