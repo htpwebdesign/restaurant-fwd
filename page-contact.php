@@ -59,7 +59,8 @@ get_header();
 			</div>
 			<?php endwhile; ?>
 			</div>
-			<?php endif; ?>
+			<?php endif;
+			?>
 
 	</main><!-- #main -->
 
