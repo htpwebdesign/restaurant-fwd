@@ -33,16 +33,21 @@ get_header();
 					'hide_empty' => false,
 				));
 				foreach($terms as $term) {
-					echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
+					echo '<button data-filter="'. post_class( 'grid-item' ).'">'.$term->name.'</button>';
 				}
+
+				while ( have_posts() ) :
+					the_post();
 			?>
 		</div>
 							
  
-	<?php  ?>
+	<?php  
+
+		?>
 
 				<div class="grid">
-				<article class="grid-item .isotope_food_category">
+				<article <?php get_class( 'grid-item' ); ?>>
 					<h2><?php the_title(); ?></h2>
 					
 					<?php 
@@ -87,6 +92,7 @@ get_header();
 				</div>
 
 		<?php  
+		endwhile;
 			the_posts_navigation();
 
 		else :
