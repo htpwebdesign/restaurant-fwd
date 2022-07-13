@@ -184,7 +184,13 @@ body {
 				}
 			}
 		}
+		
 	}
+		.ml-slider{
+			max-width: 300px;
+			margin: 0 auto;
+			margin-top: 5rem;
+		}
 	// Menu Item styling 
 	.menu-card{
 		// background-color: beige;
@@ -233,6 +239,9 @@ body {
 // Menu Desktop Styling
 @media (min-width: 600px) {
 	.site-main{
+		.ml-slider{
+			max-width: 590px;
+		}
 		section{
 			h2{
 				text-align: center;
@@ -259,6 +268,9 @@ body {
 
 @media (min-width: 710px) {
 	.site-main{
+		.ml-slider{
+			max-width: 690px;
+		}
 		section{
 			ul{
 				width: 200px;
