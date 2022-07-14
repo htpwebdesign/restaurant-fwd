@@ -217,6 +217,9 @@ body {
 			max-width: 300px;
 			margin: 0 auto;
 			margin-top: 5rem;
+			.slides{
+				border: 3px solid white;
+			}
 		}
 	// Menu Item styling 
 	.menu-card{
@@ -271,6 +274,7 @@ body {
 			max-width: 580px;
 			.slides{
 				width: 580px;
+				border: 3px solid white;
 			}
 		}
 		section{
@@ -309,6 +313,7 @@ body {
 			max-width: 690px;
 			.slides{
 				width: 690px;
+				border: 3px solid white;
 			}
 		}
 		section{
