@@ -6,21 +6,35 @@ body {
 
 // Home page hero section
 .hero-home-text{
-	h3,p{
+	color: white;
+	font-size: 1.2rem;
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	position: absolute;
+	bottom: 13rem;
+	left: 0;
+	right: 0;
+
+	h1,p{
+		margin: 0 auto;
 		text-align: center;
-		z-index: 99999;
-		font-size: 2.5rem;
-		position: relative;
-		color: white;
-		text-shadow: 3px 4px 12px #010101;
+		text-shadow: 2px 2px 14px #000000;
+		padding: 0;
 	}
 }
-@media (max-width:600px) {
+@media (min-width:600px) {
 	.hero-home-text{
-		h3,p{
-			font-size: 2rem;
-		}
+		width: auto;
+		font-size: 1.5rem;
+		bottom: 22rem;
 	}
+}
+@media (min-width: 1200px) {
+	.hero-home-text{
+		font-size: 2rem;
+	}
+	
 }
 
 // Menu CTA section
@@ -32,10 +46,12 @@ body {
 	.cta-menu-heading{
 		font-weight: 600;
 		font-style: italic;
+		width: 250px;
 		font-size: 3rem;
 		text-align: center;
 		color: white;
 		margin-bottom: 3rem;
+		text-shadow: 2px 2px 14px #000000;
 	}
 	.cta-menu-text{
 		text-align: center;
@@ -44,6 +60,7 @@ body {
 		margin: 0 auto;
 		color: white;
 		margin-bottom: 3rem;
+		
 	}
 	.button{
 		text-decoration: none;
@@ -159,12 +176,15 @@ body {
 	section{
 		h2{
 			text-align: center;
-			margin: 0;
+			margin: 0 auto;
 			margin-top: 5rem;
 			font-size: 2.3rem;
+			text-shadow: 2px 2px 14px #000000;
 			color: white;
 			font-weight: 700;
 			font-style: italic;
+			border-bottom: 3px solid white;
+			width: 320px;
 			
 		}
 		ul{
@@ -203,13 +223,14 @@ body {
 		// background-color: beige;
 		width: 300px;
 		margin: 0 auto;
-		padding: 5px;
+		padding: 10px;
 		margin-top: 2rem;
 		border: 3px solid white;
 		h2{
 			text-transform: capitalize;
 			text-align: center;
 			color: white;
+			text-shadow: 2px 2px 14px #000000;
 		}
 		.food-description{
 			text-align: center;
@@ -230,7 +251,7 @@ body {
 			margin: 0 auto;
 			
 			ul{
-				width: 300px;
+				width: 270px;
 				display: grid;
 				margin: 0 auto;
 				grid-template-columns: 1fr 1fr;
@@ -256,6 +277,7 @@ body {
 			h2{
 				text-align: center;
 				font-size: 3rem;
+				width: 410px;
 			}
 			ul{
 				display: grid;
@@ -271,6 +293,11 @@ body {
 		}
 		.menu-card{
 			width: 400px;
+			.food-flavour{
+				ul{
+					width: 370px;
+				}
+			}
 		}
 	}
 	
@@ -315,11 +342,14 @@ body {
 			h1{
 				width: 290px;
 				margin: 0 auto;
+				text-shadow: 2px 2px 14px #000000;
 			}
 			h2{
 				font-size: 1rem;
 				font-weight: 400;
 				margin-top: 2rem;
+				width: auto;
+				border: none;
 			}
 		}
 		a{
