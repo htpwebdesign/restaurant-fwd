@@ -37,6 +37,19 @@ body {
 	
 }
 
+// Google Maps Styling
+.acf-map {
+    width: 100%;
+    height: 400px;
+    border: #ccc solid 1px;
+    margin: 20px 0;
+}
+
+// Fixes potential theme css conflict.
+.acf-map img {
+   max-width: inherit !important;
+}
+
 // Menu CTA section
 .menu-cta{
 	margin-top: 5rem;
