@@ -377,6 +377,7 @@ body {
 		}
 	}
 }
+<<<<<<< Updated upstream
 // Career Page Mobile styling
 .career-section {
 	color: white;
@@ -403,3 +404,37 @@ body {
 	}
 
 }
+=======
+
+
+// Contact page Mobile styling
+#post-19 {
+	width: 80%;
+	color: white;
+	padding-top: 9.5rem;
+	margin: 0 auto;
+	h1 {
+		font-size: 1.5rem;
+	}
+	.wpforms-submit {
+		padding: 0.5rem;
+	}
+}
+
+
+@media (min-width: 700px) {
+	#post-19 {
+		max-width: 100%;
+		color: white;
+		padding-top: 12rem;
+		margin: 0 auto;
+		h1 {
+			font-size: 2rem;
+		}
+		.wpforms-submit {
+			padding: 1rem;
+		}
+	}
+}
+
+>>>>>>> Stashed changes
