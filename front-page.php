@@ -70,23 +70,9 @@ get_header();
 	
 			// Our Menu CTA Gallery
 
-			$images = get_field('cta_menu_gallery');
-			if( $images ): ?>
-
-				<div class = "gallery">
-
-						<?php foreach( $images as $image ): ?>
-								<a href="<?php echo $image['url']; ?>" title="<?php echo $image['title']; ?>">
-									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-								</a>
-					
-						<?php endforeach; ?>
-						
-
-				</div>
-	
-			<?php endif;
-
+		?>
+			
+			 <?php
 			$link = get_field('cta_menu_link');
 			if( $link ) : 
 				$link_url = $link['url'];
