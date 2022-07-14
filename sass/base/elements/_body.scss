@@ -60,10 +60,16 @@ body {
 		width: 65px;
 		display: flex;
 		margin: 0 auto;
+		margin-top: 5rem;
 		justify-content: center;
 		text-decoration: none;
 		border-radius: 10px;
 	}
+}
+
+// Carousel Styles
+.site-main section ul.slides {
+	display: block;
 }
 
 // Footer styles
