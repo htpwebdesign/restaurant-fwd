@@ -68,9 +68,9 @@ get_header();
 									<?php
 			endwhile;
 	
-			// Our Menu CTA Gallery
+			// Our Menu CTA Carousel
+			 echo do_shortcode('[metaslider id="317"]'); ?>
 
-		?>
 			
 			 <?php
 			$link = get_field('cta_menu_link');
