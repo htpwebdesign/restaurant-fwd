@@ -247,7 +247,10 @@ body {
 @media (min-width: 600px) {
 	.site-main{
 		.ml-slider{
-			max-width: 590px;
+			max-width: 580px;
+			.slides{
+				width: 580px;
+			}
 		}
 		section{
 			h2{
@@ -277,6 +280,9 @@ body {
 	.site-main{
 		.ml-slider{
 			max-width: 690px;
+			.slides{
+				width: 690px;
+			}
 		}
 		section{
 			ul{
