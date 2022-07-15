@@ -109,7 +109,7 @@ get_header();
 			}
 		}
 		if( have_rows('locations', 'options') ): ?>
-			<div class="acf-map" data-zoom="16">
+			<div class="acf-map" data-zoom="22">
 			<?php while ( have_rows('locations', 'options') ) : the_row();
 			// Load sub field values.
 			$location = get_sub_field('google_maps', 'options');

@@ -51,12 +51,12 @@ if ( $terms && ! is_wp_error($terms) ) : ?>
 
 <?php endif; ?>
 
+		<section class="menu-list">
+		
 			<?php  
 			while ( have_posts() ) :
 				the_post();
-			?>		
-
-	
+			?>			
 				<article <?php post_class( 'menu-card' ); ?>>
 				<h2><?php the_title(); ?></h2>
 
@@ -96,11 +96,15 @@ if ( $terms && ! is_wp_error($terms) ) : ?>
 
 				?>
 			</article>
+		
 			<?php  
 
 			endwhile;
 
 			?>
+
+		</section>
+
 			<?php echo do_shortcode('[metaslider id="301"]'); ?>
 			
 				<?php  
