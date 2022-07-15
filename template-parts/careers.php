@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header"></header>
 		<?php
 
 	$terms = get_terms( 
@@ -31,6 +31,7 @@
 					<?php endforeach; ?>
 				</ul>
 		</section>
+
 	<?php endif;
 
 	$args = array(

@@ -8,6 +8,7 @@ object {
 img {
 	height: auto; // Make sure images are scaled correctly.
 	max-width: 100%; // Adhere to container width.
+	object-fit: cover;
 }
 
 figure {
@@ -22,6 +23,5 @@ figure {
 		margin: 0;
 		margin-top: 5rem;
 		padding: 0;
-		width: 300px;
 	}
 }
