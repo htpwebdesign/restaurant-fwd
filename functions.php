@@ -217,3 +217,40 @@ function yoast_to_bottom(){
 		return 'low';
 	}
 	add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+	// edit Widget
+	function my_custom_dashboard_widgets() { 
+		global $wp_meta_boxes; 
+		wp_add_dashboard_widget('custom_help_widget', 'Theme Support', 'custom_dashboard_help'); 
+		} 
+		function custom_dashboard_help() { 
+		echo '<p>Welcome to Dukes! Need help? Contact the developer <a 
+		href="mailto:shersaed0107@gmail.com">here</a>. For WordPress Tutorials visit: <a href="https://www.google.com" 
+		target="_blank">WPBeginner</a></p>'; 
+		} 
+		add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+
+
+		// Remove Widgets
+
+		function remove_dashboard_widgets() 
+{ 
+    //first parameter -> slig/id of the widget 
+    //second parameter -> where the meta box is displayed, it can be page, post, dashboard etc. 
+    //third parameter -> position of the meta box. If you have used wp_add_dashboard_widget to create the widget or 
+// deleting default widget then provide the value "normal". 
+    remove_meta_box('wc_admin_dashboard_setup', 'dashboard', "normal"); 
+    remove_meta_box('dashboard_site_health', 'dashboard', 'normal'); 
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal'); 
+    remove_meta_box('jetpack_summary_widget', 'dashboard', 'normal'); 
+    remove_meta_box('tribe_dashboard_widget', 'dashboard', 'normal'); 
+    remove_meta_box('wc_newsletter_subscription_stats', 'dashboard', 'normal'); 
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); 
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side'); 
+    remove_meta_box('dashboard_primary', 'dashboard', 'side'); 
+    remove_meta_box('wpforms_reports_widget_lite', 'dashboard', 'normal'); 
+    // remove_meta_box('custom_help_widget', 'dashboard', 'normal'); 
+    remove_meta_box('wpseo-dashboard-overview', 'dashboard', 'normal'); 
+} 
+ 
+add_action("wp_dashboard_setup", "remove_dashboard_widgets");
